@@ -164,7 +164,7 @@ a {
   bottom: 0;
   left: 0;
   width: clamp(36rem, 54vw, 66rem);
-  background-image: url("assets/amihan-hero-left-art-solid.png?v=20260530-1");
+  background-image: url("assets/amihan-hero-left-art-solid.png?v=20260530-2");
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -202,7 +202,8 @@ a {
 }
 
 .hero .eyebrow {
-  color: var(--pale-gold);
+  color: var(--gold);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 h1,
@@ -216,8 +217,9 @@ h3 {
 }
 
 .hero h1 {
-  color: var(--white);
+  color: var(--deep-navy);
   font-size: 4.6rem;
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.45);
 }
 
 .sub-hero h1 {
@@ -238,15 +240,19 @@ p {
 
 .slogan {
   margin-top: 1rem;
-  color: var(--pale-gold);
+  color: #7d5a23;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.55rem;
   font-style: italic;
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .hero-copy {
-  color: rgba(255, 255, 255, 0.92);
+  color: #143c5c;
   font-size: 1.25rem;
+  font-weight: 650;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .hero-actions {
@@ -280,13 +286,29 @@ p {
 }
 
 .button-secondary {
-  border-color: rgba(255, 255, 255, 0.55);
+  background: var(--navy);
+  border-color: var(--navy);
   color: var(--white);
+  box-shadow: 0 12px 26px rgba(4, 29, 61, 0.18);
 }
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--deep-navy);
+  border-color: var(--deep-navy);
+  outline: none;
+}
+
+.button-facebook {
+  background: #1877f2;
+  border-color: #1877f2;
+  color: var(--white);
+}
+
+.button-facebook:hover,
+.button-facebook:focus-visible {
+  background: #0f5fc7;
+  border-color: #0f5fc7;
   outline: none;
 }
 
@@ -656,6 +678,13 @@ p {
 
 .cta-inner > div {
   max-width: 760px;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
 }
 
 .site-footer {
