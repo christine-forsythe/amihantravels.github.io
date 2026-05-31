@@ -420,37 +420,42 @@ p {
 .advisor-photo {
   position: relative;
   margin: 0;
-  border: 2px solid rgba(181, 138, 66, 0.72);
   border-radius: 8px;
-  box-shadow:
-    0 0 0 8px rgba(239, 227, 200, 0.72),
-    0 24px 54px rgba(181, 138, 66, 0.22),
-    0 18px 45px rgba(4, 29, 61, 0.13);
-  overflow: hidden;
-  background: var(--white);
 }
 
 .advisor-photo img {
+  display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
+  border: 2px solid rgba(181, 138, 66, 0.72);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow:
+    0 0 0 8px rgba(239, 227, 200, 0.72),
+    0 24px 54px rgba(181, 138, 66, 0.2),
+    0 18px 45px rgba(4, 29, 61, 0.12);
   object-fit: cover;
   object-position: center top;
 }
 
 .advisor-photo figcaption {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  max-width: calc(100% - 2rem);
-  border-radius: 6px;
-  border: 1px solid rgba(239, 227, 200, 0.45);
-  background: linear-gradient(90deg, var(--deep-navy), var(--navy));
-  color: var(--white);
-  padding: 0.65rem 0.9rem;
+  width: fit-content;
+  max-width: calc(100% - 1.5rem);
+  margin: 1.25rem auto 0;
+  border: 1px solid rgba(181, 138, 66, 0.34);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(181, 138, 66, 0.18), transparent 22%, transparent 78%, rgba(181, 138, 66, 0.18)),
+    rgba(255, 255, 255, 0.78);
+  color: var(--deep-navy);
+  padding: 0.72rem 1.15rem 0.78rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-style: italic;
-  box-shadow: 0 10px 24px rgba(4, 29, 61, 0.22);
+  text-align: center;
+  box-shadow:
+    0 12px 26px rgba(181, 138, 66, 0.13),
+    0 8px 22px rgba(4, 29, 61, 0.07);
 }
 
 .advisor-copy {
