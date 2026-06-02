@@ -1058,11 +1058,25 @@ p {
     padding-top: 4rem;
   }
 
-  .header-inner,
   .footer-inner,
   .cta-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .header-inner {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .brand {
+    flex: 0 0 auto;
+    justify-content: center;
+  }
+
+  .site-nav {
+    justify-content: center;
+    width: 100%;
   }
 
   .brand-strip,
@@ -1118,48 +1132,123 @@ p {
 }
 
 @media (max-width: 620px) {
-  .header-inner {
-    min-height: auto;
-    padding: 0.85rem 0;
+  .site-header {
+    position: static;
+    backdrop-filter: none;
   }
 
-  .brand img,
+  .header-inner {
+    width: min(34rem, calc(100% - 1.25rem));
+    min-height: auto;
+    gap: 0.55rem;
+    padding: 0.55rem 0 0.65rem;
+  }
+
+  .brand {
+    width: 100%;
+    max-height: 60px;
+  }
+
+  .brand img {
+    width: min(190px, 56vw);
+  }
+
   .footer-logo {
     width: 215px;
   }
 
   .site-nav {
-    justify-content: flex-start;
+    flex-wrap: nowrap;
     width: 100%;
+    gap: 0.22rem;
+    overflow-x: auto;
+    padding-bottom: 0.12rem;
+    font-size: 0.86rem;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .site-nav a {
-    padding: 0.5rem 0.6rem;
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 0.42rem 0.5rem;
+    white-space: nowrap;
+  }
+
+  .site-nav .nav-contact {
+    padding-right: 0.65rem;
+    padding-left: 0.65rem;
   }
 
   .hero {
-    min-height: 64vh;
-    background-position: 42% center;
+    min-height: auto;
+    background-position: center;
   }
 
-  .home-hero {
-    min-height: auto;
+  .home-hero,
+  .itineraries-hero {
+    display: block;
+    padding: 1.25rem 0 2.25rem;
+    background-image: linear-gradient(145deg, #e9f6fb 0%, #dceff9 48%, #f7fbfd 100%);
+  }
+
+  .home-hero::before,
+  .itineraries-hero::before {
+    width: 100%;
+    opacity: 0.34;
+    background-position: left top;
+    background-size: auto 100%;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.78) 58%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.78) 58%, transparent 100%);
+  }
+
+  .hero::after {
+    height: 7rem;
+    background: linear-gradient(180deg, rgba(247, 251, 253, 0), rgba(247, 251, 253, 0.9) 72%, #f7fbfd 100%);
   }
 
   .sub-hero {
-    min-height: 44vh;
+    min-height: auto;
   }
 
   .hero-content {
-    padding: 4rem 0;
+    padding: 2rem 0;
+  }
+
+  .home-hero .hero-content,
+  .itineraries-hero .hero-content {
+    width: min(34rem, calc(100% - 1.25rem));
+    margin: 0 auto;
+    border: 1px solid rgba(181, 138, 66, 0.32);
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.93), rgba(247, 251, 253, 0.86)),
+      rgba(255, 255, 255, 0.88);
+    padding: 1.1rem;
+    box-shadow:
+      0 0 0 5px rgba(239, 227, 200, 0.28),
+      0 18px 38px rgba(4, 29, 61, 0.12);
+  }
+
+  .hero-content > * {
+    max-width: none;
+  }
+
+  .hero .eyebrow {
+    background: rgba(220, 239, 249, 0.92);
+    box-shadow: none;
   }
 
   .hero h1 {
-    font-size: 2.75rem;
+    font-size: clamp(2.35rem, 11vw, 3rem);
+    text-shadow: none;
   }
 
   .sub-hero h1 {
-    font-size: 2.35rem;
+    font-size: clamp(2.25rem, 10vw, 2.8rem);
   }
 
   h2 {
@@ -1168,7 +1257,17 @@ p {
 
   .slogan,
   .hero-copy {
-    font-size: 1.08rem;
+    color: var(--deep-navy);
+    text-shadow: none;
+  }
+
+  .slogan {
+    font-size: 1.06rem;
+  }
+
+  .hero-copy {
+    font-size: 1rem;
+    font-weight: 650;
   }
 
   .section {
